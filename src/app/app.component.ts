@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { SignalLightComponent } from './signal-light/signal-light.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  imports: [SignalLightComponent],
+  template: '<signal-light />',
 })
-export class AppComponent {
-  title = 'test-app';
-}
+export class AppComponent {}

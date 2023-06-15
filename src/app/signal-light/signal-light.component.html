@@ -1,0 +1,21 @@
+<div class="list-label">Item name :</div>
+<div class="filter-block">
+  <label for="name">
+    <input [formControl]="nameCtrl" id="name" name="product_type" />
+  </label>
+</div>
+<div class="action-btns">
+  <button type="button" (click)="addItem()">Add new</button>
+  <button type="button" (click)="resetList()">Delete All</button>
+</div>
+<div class="list-block">
+  <!-- TODO: Display the items -->
+  <p>item</p>
+  <div class="error">The list is empty</div>
+</div>
+
+<div class="summary">
+  <strong>Count :</strong>
+  <!-- TODO: Display number of items -->
+  0
+</div>
