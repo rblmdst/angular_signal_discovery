@@ -4,18 +4,21 @@
     <input [formControl]="nameCtrl" id="name" name="product_type" />
   </label>
 </div>
+
 <div class="action-btns">
   <button type="button" (click)="addItem()">Add new</button>
   <button type="button" (click)="resetList()">Delete All</button>
 </div>
 <div class="list-block">
-  <!-- TODO: Display the items -->
-  <p>item</p>
+  @for (item of items(); track item) {
+  <p>{{ item }}</p>
+  } @empty {
   <div class="error">The list is empty</div>
+
+  }
 </div>
 
 <div class="summary">
   <strong>Count :</strong>
-  <!-- TODO: Display number of items -->
-  0
+  {{ count() }}
 </div>

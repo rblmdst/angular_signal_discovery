@@ -10,19 +10,24 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class SignalLightComponent {
   nameCtrl = new FormControl();
 
-  // items: string[] = [];
+  items = signal<string[]>([]);
+  count = computed(() => this.items().length);
 
   constructor() {
-    // TODO: Log product list changes (effect)
+    effect(() => {
+      console.log(this.items().join('#'));
+    });
   }
 
   resetList() {
-    // TODO: Clear the list
+    this.items.set([]);
   }
 
   addItem() {
     const itemName = this.nameCtrl.value;
-    // TODO: Add new item to the list
+    // this.items.set([...this.items(), itemName]);
+    this.items.update((curr) => [...curr, itemName]);
+
     this.nameCtrl.reset();
   }
 }
